@@ -19,12 +19,6 @@ namespace XMLWeather
 
             // get information about current and forecast weather from the internet
             GetData();
-
-            // take info from the current weather file and display it to the screen
-            ExtractCurrent();
-
-            // take info from the forecast weather file and display it to the screen
-            ExtractForecast();
         }
 
         private static void GetData()
@@ -38,32 +32,33 @@ namespace XMLWeather
             client.DownloadFile(forecastFile, "WeatherData7Day.xml");
         }
 
-        private void ExtractCurrent()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("WeatherData.xml");
-
-            //create a node variable to represent the parent element
-            XmlNode parent;
-            parent = doc.DocumentElement;
-
-            //check each child of the parent element
-            foreach (XmlNode child in parent.ChildNodes)
-            {
-                // TODO if the "city" element is found display the value of it's "name" attribute
-            }
-        }
-              
-        private void ExtractForecast()
-        {
-                     
-        }
-
 
         private void MakePictureParent()
         {
             
         }
 
+        private void currentLabel_Click(object sender, EventArgs e)
+        {
+
+            // take info from the current weather file and display it to the screen
+           CurrentForm cf = new CurrentForm();
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+            cf.Location = new Point((f.Width - cf.Width) / 2, (f.Height - cf.Height) / 2);
+            f.Controls.Add(cf);
+            cf.BringToFront();
+        }
+
+        private void futureButton_Click(object sender, EventArgs e)
+        {
+            // take info from the forecast weather file and display it to the screen
+            ForcastForm ff = new ForcastForm();
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+            ff.Location = new Point((f.Width - ff.Width) / 2, (f.Height - ff.Height) / 2);
+            f.Controls.Add(ff);
+            ff.BringToFront();
+        }
     }
 }

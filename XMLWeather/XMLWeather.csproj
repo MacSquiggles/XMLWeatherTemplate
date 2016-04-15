@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurrentForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CurrentForm.Designer.cs">
+      <DependentUpon>CurrentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForcastForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ForcastForm.Designer.cs">
+      <DependentUpon>ForcastForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CurrentForm.resx">
+      <DependentUpon>CurrentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForcastForm.resx">
+      <DependentUpon>ForcastForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +97,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Rain3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
