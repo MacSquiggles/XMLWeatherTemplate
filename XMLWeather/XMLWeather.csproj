@@ -46,34 +46,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CurrentForm.cs">
+    <Compile Include="Forms and User Controls\CurrentForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CurrentForm.Designer.cs">
+    <Compile Include="Forms and User Controls\CurrentForm.Designer.cs">
       <DependentUpon>CurrentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ForcastForm.cs">
+    <Compile Include="Forms and User Controls\ForcastForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ForcastForm.Designer.cs">
+    <Compile Include="Forms and User Controls\ForcastForm.Designer.cs">
       <DependentUpon>ForcastForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms and User Controls\ForecastForm2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms and User Controls\ForecastForm2.Designer.cs">
+      <DependentUpon>ForecastForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms and User Controls\ForecastForm3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms and User Controls\ForecastForm3.Designer.cs">
+      <DependentUpon>ForecastForm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms and User Controls\ForecastMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms and User Controls\ForecastMenu.Designer.cs">
+      <DependentUpon>ForecastMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms and User Controls\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms and User Controls\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CurrentForm.resx">
+    <EmbeddedResource Include="Forms and User Controls\CurrentForm.resx">
       <DependentUpon>CurrentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ForcastForm.resx">
+    <EmbeddedResource Include="Forms and User Controls\ForcastForm.resx">
       <DependentUpon>ForcastForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Forms and User Controls\ForecastForm2.resx">
+      <DependentUpon>ForecastForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms and User Controls\ForecastForm3.resx">
+      <DependentUpon>ForecastForm3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms and User Controls\ForecastMenu.resx">
+      <DependentUpon>ForecastMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms and User Controls\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,6 +139,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\white background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Objects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bleu.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

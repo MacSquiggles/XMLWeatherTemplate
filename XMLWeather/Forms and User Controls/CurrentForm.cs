@@ -36,7 +36,13 @@ namespace XMLWeather
                 }
                 if(child.Name == "temperature")
                 {
-                    currentTempLabel.Text = "Current Temperature: " + child.Attributes["temperature"].Value;
+                    currentTempLabel.Text = "Current Temperature: " + child.Attributes["value"].Value;
+                    minLabel.Text = "Min Temperature: " + child.Attributes["min"].Value;
+                    maxLabel.Text = "Max Temperature: " + child.Attributes["max"].Value;
+                }
+                if(child.Name == "clouds")
+                {
+                    cloudLabel.Text = child.Attributes["name"].Value;
                 }
                 if (child.Name == "wind")
                 {
@@ -49,6 +55,26 @@ namespace XMLWeather
                     }
                 }
             }
+        }
+
+        private void exitLabel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void mainMenuLabel_Click(object sender, EventArgs e)
+        {
+            MainMenu mm = new MainMenu();
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+            mm.Location = new Point((f.Width - mm.Width) / 2, (f.Height - mm.Height) / 2);
+            f.Controls.Add(mm);
+            mm.BringToFront();
+        }
+
+        private void nameLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
