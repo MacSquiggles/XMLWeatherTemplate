@@ -43,22 +43,22 @@ namespace XMLWeather
                             
                             if (greatGrandChild.Name == "temperature")
                             {
-                                switch (day)
-                                {
-                                    case 1:
-                                        forcastMaxLabel.Text = "Max Temp: " + greatGrandChild.Attributes["max"].Value;
-                                        forcastMinLabel.Text = "Min Temp: " + greatGrandChild.Attributes["min"].Value;
-                                        break;
-                                    default:
-                                        break;
-                                }
+                                //switch (day)
+                                //{
+                                //    case 1:
+                                        forcastMaxLabel.Text = "Max Temp: " + greatGrandChild.Attributes["max"].Value + "°C";
+                                        forcastMinLabel.Text = "Min Temp: " + greatGrandChild.Attributes["min"].Value + "°C";
+                                //        break;
+                                //    default:
+                                //        break;
+                                //}
                             }
                             if (greatGrandChild.Name == "clouds")
                                 {
                                 switch (day)
                                 {
                                     case 1:
-                                        cloudsLabel1.Text = "Clouds: " + greatGrandChild.Attributes["value"].Value;
+                                        cloudsLabel1.Text =  greatGrandChild.Attributes["value"].Value;
                                         break;
                                     default:
                                         break;
@@ -69,7 +69,7 @@ namespace XMLWeather
                                 switch (day)
                                 {
                                     case 1:
-                                        cloudsLabel1.Text = "Wind: " + greatGrandChild.Attributes["name"].Value;
+                                        cloudsLabel1.Text = greatGrandChild.Attributes["name"].Value;
                                         day++;
                                         break;
                                     default:

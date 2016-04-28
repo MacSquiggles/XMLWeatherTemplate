@@ -58,8 +58,8 @@ namespace XMLWeather
                                 //switch (ForecastForm1.day)
                                 //{
                                 //    case 2:
-                                        forcastMaxLabel2.Text = "Max Temp: " + greatGrandChild.Attributes["max"].Value;
-                                        forcastMinLabel2.Text = "Min Temp: " + greatGrandChild.Attributes["min"].Value;
+                                        forcastMaxLabel2.Text = "Max Temp: " + greatGrandChild.Attributes["max"].Value + "°C";
+                                        forcastMinLabel2.Text = "Min Temp: " + greatGrandChild.Attributes["min"].Value + "°C";
                                 //        break;
                                 //    default:
                                 //        break;
@@ -70,7 +70,7 @@ namespace XMLWeather
                                 //switch (ForecastForm1.day)
                                 //{
                                 //    case 2:
-                                        cloudsLabel2.Text = "Clouds: " + greatGrandChild.Attributes["value"].Value;
+                                        cloudsLabel2.Text = greatGrandChild.Attributes["value"].Value;
                                 //        break;
                                 //    default:
                                 //        break;
@@ -81,8 +81,8 @@ namespace XMLWeather
                                 //switch (ForecastForm1.day)
                                 //{
                                 //    case 2:
-                                cloudsLabel2.Text = "Wind: " + greatGrandChild.Attributes["name"].Value;
-                                ForecastForm1.day++;
+                                cloudsLabel2.Text = greatGrandChild.Attributes["name"].Value;
+                               // ForecastForm1.day++;
                                 //break;
                                 //default:
                                 //        break;

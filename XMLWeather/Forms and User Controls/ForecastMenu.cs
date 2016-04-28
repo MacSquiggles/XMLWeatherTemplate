@@ -11,6 +11,8 @@ namespace XMLWeather
 {
     public partial class ForecastMenu : UserControl
     {
+        
+
         public ForecastMenu()
         {
             InitializeComponent();

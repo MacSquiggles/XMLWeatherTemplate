@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day.cs" />
     <Compile Include="Forms and User Controls\CurrentForm.cs">
       <SubType>UserControl</SubType>
     </Compile>

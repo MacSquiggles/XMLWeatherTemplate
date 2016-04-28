@@ -13,6 +13,13 @@ namespace XMLWeather
 {
     public partial class MainMenu : UserControl
     {
+        DateTime currentMonth = DateTime.Now.AddMonths(0);
+        DateTime currentDate = DateTime.Now.AddDays(0);
+        DateTime forecastDate1 = DateTime.Now.AddDays(1);
+        DateTime forecastDate2 = DateTime.Now.AddDays(2);
+        DateTime forecastDate3 = DateTime.Now.AddDays(3);
+        public static List<int> days = new List<int>(4);
+
         public MainMenu()
         {
             InitializeComponent();
@@ -48,6 +55,8 @@ namespace XMLWeather
 
             client.DownloadFile(currentFile, "WeatherData.xml");
             client.DownloadFile(forecastFile, "WeatherData7Day.xml");
+
+            days.InsertRange(days.Count(), new int[] { currentDate, forecast1, forecast2, forecastDate3 });
         }
 
         private void exitLabel2_Click(object sender, EventArgs e)

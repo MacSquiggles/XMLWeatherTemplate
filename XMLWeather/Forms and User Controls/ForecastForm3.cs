@@ -58,19 +58,19 @@ namespace XMLWeather
                                 //switch (ForecastForm1.day)
                                 //{
                                 //    case 2:
-                                        forcastMaxLabel3.Text = "Max Temp: " + greatGrandChild.Attributes["max"].Value;
-                                        forcastMinLabel3.Text = "Min Temp: " + greatGrandChild.Attributes["min"].Value;
+                                        forcastMaxLabel3.Text = "Max Temp: " + greatGrandChild.Attributes["max"].Value + "°C";
+                                        forcastMinLabel3.Text = "Min Temp: " + greatGrandChild.Attributes["min"].Value + "°C";
                                     //    break;
                                     //default:
                                     //    break;
-                                //}
+                                    //}
                             }
                             if (greatGrandChild.Name == "clouds")
                             {
                                 //switch (ForecastForm1.day)
                                 //{
                                 //    case 2:
-                                        cloudsLabel3.Text = "Clouds: " + greatGrandChild.Attributes["value"].Value;
+                                        cloudsLabel3.Text = greatGrandChild.Attributes["value"].Value;
                                 //        break;
                                 //    default:
                                 //        break;
@@ -81,7 +81,7 @@ namespace XMLWeather
                                 //switch (ForecastForm1.day)
                                 //{
                                 //    case 2:
-                                        cloudsLabel3.Text = "Wind: " + greatGrandChild.Attributes["name"].Value;
+                                        windLabel3.Text = greatGrandChild.Attributes["name"].Value;
                                 //        break;
                                 //    default:
                                 //        break;

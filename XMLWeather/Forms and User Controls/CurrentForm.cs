@@ -13,6 +13,7 @@ namespace XMLWeather
 {
     public partial class CurrentForm : UserControl
     {
+
         public CurrentForm()
         {
             InitializeComponent();
@@ -36,9 +37,7 @@ namespace XMLWeather
                 }
                 if(child.Name == "temperature")
                 {
-                    currentTempLabel.Text = "Current Temperature: " + child.Attributes["value"].Value;
-                    minLabel.Text = "Min Temperature: " + child.Attributes["min"].Value;
-                    maxLabel.Text = "Max Temperature: " + child.Attributes["max"].Value;
+                    currentTempLabel.Text = "It is " + child.Attributes["value"].Value + "°C";
                 }
                 if(child.Name == "clouds")
                 {
@@ -48,6 +47,10 @@ namespace XMLWeather
                 {
                     foreach (XmlNode grandChild in child.ChildNodes)
                     {
+                        if (grandChild.Name == "direction")
+                        {
+                            windDirectLabel.Text = grandChild.Attributes["name"].Value + " wind";
+                        }
                         if (grandChild.Name == "speed")
                         {
                             currentWindLabel.Text = grandChild.Attributes["name"].Value;
@@ -70,11 +73,6 @@ namespace XMLWeather
             mm.Location = new Point((f.Width - mm.Width) / 2, (f.Height - mm.Height) / 2);
             f.Controls.Add(mm);
             mm.BringToFront();
-        }
-
-        private void nameLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
