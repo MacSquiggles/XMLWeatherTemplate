@@ -59,18 +59,6 @@
     <Compile Include="Forms and User Controls\ForcastForm.Designer.cs">
       <DependentUpon>ForcastForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms and User Controls\ForecastForm2.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms and User Controls\ForecastForm2.Designer.cs">
-      <DependentUpon>ForecastForm2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms and User Controls\ForecastForm3.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms and User Controls\ForecastForm3.Designer.cs">
-      <DependentUpon>ForecastForm3.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms and User Controls\ForecastMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,12 +84,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms and User Controls\ForcastForm.resx">
       <DependentUpon>ForcastForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms and User Controls\ForecastForm2.resx">
-      <DependentUpon>ForecastForm2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms and User Controls\ForecastForm3.resx">
-      <DependentUpon>ForecastForm3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms and User Controls\ForecastMenu.resx">
       <DependentUpon>ForecastMenu.cs</DependentUpon>

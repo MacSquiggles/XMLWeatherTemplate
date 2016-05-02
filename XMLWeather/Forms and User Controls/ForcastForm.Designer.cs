@@ -28,39 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.forcastMinLabel = new System.Windows.Forms.Label();
-            this.forcastMaxLabel = new System.Windows.Forms.Label();
+            this.forecastMinLabel = new System.Windows.Forms.Label();
+            this.forecastMaxLabel = new System.Windows.Forms.Label();
             this.nameLabel2 = new System.Windows.Forms.Label();
             this.exitLabel2 = new System.Windows.Forms.Label();
-            this.cloudsLabel1 = new System.Windows.Forms.Label();
-            this.windLabel1 = new System.Windows.Forms.Label();
+            this.cloudsLabel = new System.Windows.Forms.Label();
+            this.windLabel = new System.Windows.Forms.Label();
             this.windLabel2 = new System.Windows.Forms.Label();
             this.mainMenuLabel2 = new System.Windows.Forms.Label();
+            this.rainPerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // forcastMinLabel
+            // forecastMinLabel
             // 
-            this.forcastMinLabel.BackColor = System.Drawing.Color.Transparent;
-            this.forcastMinLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forcastMinLabel.Location = new System.Drawing.Point(29, 349);
-            this.forcastMinLabel.Name = "forcastMinLabel";
-            this.forcastMinLabel.Size = new System.Drawing.Size(427, 52);
-            this.forcastMinLabel.TabIndex = 10;
+            this.forecastMinLabel.BackColor = System.Drawing.Color.Transparent;
+            this.forecastMinLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forecastMinLabel.Location = new System.Drawing.Point(31, 277);
+            this.forecastMinLabel.Name = "forecastMinLabel";
+            this.forecastMinLabel.Size = new System.Drawing.Size(427, 52);
+            this.forecastMinLabel.TabIndex = 10;
             // 
-            // forcastMaxLabel
+            // forecastMaxLabel
             // 
-            this.forcastMaxLabel.BackColor = System.Drawing.Color.Transparent;
-            this.forcastMaxLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forcastMaxLabel.Location = new System.Drawing.Point(29, 269);
-            this.forcastMaxLabel.Name = "forcastMaxLabel";
-            this.forcastMaxLabel.Size = new System.Drawing.Size(427, 52);
-            this.forcastMaxLabel.TabIndex = 9;
+            this.forecastMaxLabel.BackColor = System.Drawing.Color.Transparent;
+            this.forecastMaxLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forecastMaxLabel.Location = new System.Drawing.Point(31, 192);
+            this.forecastMaxLabel.Name = "forecastMaxLabel";
+            this.forecastMaxLabel.Size = new System.Drawing.Size(427, 52);
+            this.forecastMaxLabel.TabIndex = 9;
             // 
             // nameLabel2
             // 
             this.nameLabel2.BackColor = System.Drawing.Color.Transparent;
             this.nameLabel2.Font = new System.Drawing.Font("Pristina", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel2.Location = new System.Drawing.Point(12, 0);
+            this.nameLabel2.Location = new System.Drawing.Point(27, 69);
             this.nameLabel2.Name = "nameLabel2";
             this.nameLabel2.Size = new System.Drawing.Size(431, 96);
             this.nameLabel2.TabIndex = 6;
@@ -78,23 +79,23 @@
             this.exitLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.exitLabel2.Click += new System.EventHandler(this.exitLabel2_Click);
             // 
-            // cloudsLabel1
+            // cloudsLabel
             // 
-            this.cloudsLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.cloudsLabel1.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cloudsLabel1.Location = new System.Drawing.Point(29, 429);
-            this.cloudsLabel1.Name = "cloudsLabel1";
-            this.cloudsLabel1.Size = new System.Drawing.Size(427, 52);
-            this.cloudsLabel1.TabIndex = 14;
+            this.cloudsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.cloudsLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cloudsLabel.Location = new System.Drawing.Point(31, 362);
+            this.cloudsLabel.Name = "cloudsLabel";
+            this.cloudsLabel.Size = new System.Drawing.Size(427, 52);
+            this.cloudsLabel.TabIndex = 14;
             // 
-            // windLabel1
+            // windLabel
             // 
-            this.windLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.windLabel1.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.windLabel1.Location = new System.Drawing.Point(29, 509);
-            this.windLabel1.Name = "windLabel1";
-            this.windLabel1.Size = new System.Drawing.Size(427, 52);
-            this.windLabel1.TabIndex = 16;
+            this.windLabel.BackColor = System.Drawing.Color.Transparent;
+            this.windLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.windLabel.Location = new System.Drawing.Point(31, 447);
+            this.windLabel.Name = "windLabel";
+            this.windLabel.Size = new System.Drawing.Size(427, 52);
+            this.windLabel.TabIndex = 16;
             // 
             // windLabel2
             // 
@@ -117,18 +118,28 @@
             this.mainMenuLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mainMenuLabel2.Click += new System.EventHandler(this.mainMenuLabel2_Click);
             // 
+            // rainPerLabel
+            // 
+            this.rainPerLabel.BackColor = System.Drawing.Color.Transparent;
+            this.rainPerLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rainPerLabel.Location = new System.Drawing.Point(31, 532);
+            this.rainPerLabel.Name = "rainPerLabel";
+            this.rainPerLabel.Size = new System.Drawing.Size(427, 52);
+            this.rainPerLabel.TabIndex = 19;
+            // 
             // ForecastForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::XMLWeather.Properties.Resources.white_background;
+            this.Controls.Add(this.rainPerLabel);
             this.Controls.Add(this.mainMenuLabel2);
             this.Controls.Add(this.windLabel2);
-            this.Controls.Add(this.windLabel1);
-            this.Controls.Add(this.cloudsLabel1);
+            this.Controls.Add(this.windLabel);
+            this.Controls.Add(this.cloudsLabel);
             this.Controls.Add(this.exitLabel2);
-            this.Controls.Add(this.forcastMinLabel);
-            this.Controls.Add(this.forcastMaxLabel);
+            this.Controls.Add(this.forecastMinLabel);
+            this.Controls.Add(this.forecastMaxLabel);
             this.Controls.Add(this.nameLabel2);
             this.Name = "ForecastForm1";
             this.Size = new System.Drawing.Size(500, 600);
@@ -138,13 +149,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label forcastMinLabel;
-        private System.Windows.Forms.Label forcastMaxLabel;
+        private System.Windows.Forms.Label forecastMinLabel;
+        private System.Windows.Forms.Label forecastMaxLabel;
         private System.Windows.Forms.Label nameLabel2;
         private System.Windows.Forms.Label exitLabel2;
-        private System.Windows.Forms.Label cloudsLabel1;
-        private System.Windows.Forms.Label windLabel1;
+        private System.Windows.Forms.Label cloudsLabel;
+        private System.Windows.Forms.Label windLabel;
         private System.Windows.Forms.Label windLabel2;
         private System.Windows.Forms.Label mainMenuLabel2;
+        private System.Windows.Forms.Label rainPerLabel;
     }
 }

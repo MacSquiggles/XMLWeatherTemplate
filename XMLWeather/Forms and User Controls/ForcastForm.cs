@@ -13,7 +13,7 @@ namespace XMLWeather
 {
     public partial class ForecastForm1 : UserControl
     {
-        public static int day = 1;
+        string clo, clo2, max, min, rain, wnd;
 
         public ForecastForm1()
         {
@@ -22,13 +22,13 @@ namespace XMLWeather
 
         private void ForcastForm_Load(object sender, EventArgs e)
         {
+
             XmlDocument doc = new XmlDocument();
             doc.Load("WeatherData7Day.xml");
 
             //create a node variable to represent the parent element
             XmlNode parent;
-            parent = doc.DocumentElement;
-           
+            parent = doc.DocumentElement;     
 
             //check each child of the parent element
             foreach (XmlNode child in parent.ChildNodes)
@@ -36,50 +36,36 @@ namespace XMLWeather
                 // TODO if the "city" element is found display the value of it's "name" attribute
                 if (child.Name == "forecast")
                 {
-                    foreach (XmlNode grandChild in child.ChildNodes)
+                    if(child.Name == MainMenu.days[ForecastMenu.numFore])
                     {
-                        foreach (XmlNode greatGrandChild in grandChild.ChildNodes)
+                        foreach (XmlNode grandChild in child.ChildNodes)
                         {
-                            
-                            if (greatGrandChild.Name == "temperature")
+                            foreach (XmlNode greatGrandChild in grandChild.ChildNodes)
                             {
-                                //switch (day)
-                                //{
-                                //    case 1:
-                                        forcastMaxLabel.Text = "Max Temp: " + greatGrandChild.Attributes["max"].Value + "°C";
-                                        forcastMinLabel.Text = "Min Temp: " + greatGrandChild.Attributes["min"].Value + "°C";
-                                //        break;
-                                //    default:
-                                //        break;
-                                //}
-                            }
-                            if (greatGrandChild.Name == "clouds")
+
+                                if (greatGrandChild.Name == "temperature")
                                 {
-                                switch (day)
-                                {
-                                    case 1:
-                                        cloudsLabel1.Text =  greatGrandChild.Attributes["value"].Value;
-                                        break;
-                                    default:
-                                        break;
+                                    max = greatGrandChild.Attributes["max"].Value;
+                                    min = greatGrandChild.Attributes["min"].Value;
                                 }
-                            }
-                            if (greatGrandChild.Name == "wind")
-                            {
-                                switch (day)
+                                if (greatGrandChild.Name == "clouds")
                                 {
-                                    case 1:
-                                        cloudsLabel1.Text = greatGrandChild.Attributes["name"].Value;
-                                        day++;
-                                        break;
-                                    default:
-                                        break;
+                                   clo = greatGrandChild.Attributes["value"].Value;
+                                }
+                                if (greatGrandChild.Name == "wind")
+                                {
+                                    clo2 = greatGrandChild.Attributes["name"].Value;
                                 }
                             }
                         }
                     }
                 }
             }
+            Day d = new Day(clo, max, min, rain, wnd, clo2);
+            forecastMaxLabel = d.maxTemp + "°C";
+            forecastMinLabel = d.minTemp + "°C";
+            cloudsLabel = d.clouds + "°C";
+            windLabel = d.wind + "°C";
         }
 
         private void exitLabel2_Click(object sender, EventArgs e)

@@ -21,6 +21,8 @@ namespace XMLWeather
 
         private void CurrentForm_Load(object sender, EventArgs e)
         {
+            nameLabel.Text = MainMenu.days[0];
+
             XmlDocument doc = new XmlDocument();
             doc.Load("WeatherData.xml");
 

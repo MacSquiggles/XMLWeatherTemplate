@@ -13,12 +13,11 @@ namespace XMLWeather
 {
     public partial class MainMenu : UserControl
     {
-        DateTime currentMonth = DateTime.Now.AddMonths(0);
-        DateTime currentDate = DateTime.Now.AddDays(0);
-        DateTime forecastDate1 = DateTime.Now.AddDays(1);
-        DateTime forecastDate2 = DateTime.Now.AddDays(2);
-        DateTime forecastDate3 = DateTime.Now.AddDays(3);
-        public static List<int> days = new List<int>(4);
+        public static DateTime currentDate = DateTime.Now.AddDays(0);
+        public static DateTime forecastDate1 = DateTime.Now.AddDays(1);
+        public static  DateTime forecastDate2 = DateTime.Now.AddDays(2);
+        public static DateTime forecastDate3 = DateTime.Now.AddDays(3);
+        public static List<string> days = new List<string>(4);
 
         public MainMenu()
         {
@@ -55,8 +54,12 @@ namespace XMLWeather
 
             client.DownloadFile(currentFile, "WeatherData.xml");
             client.DownloadFile(forecastFile, "WeatherData7Day.xml");
-
-            days.InsertRange(days.Count(), new int[] { currentDate, forecast1, forecast2, forecastDate3 });
+            List<string> days1 = Convert.ToString(currentDate).Split(' ').ToList<string>();
+            List<string> days2 = Convert.ToString(forecastDate1).Split(' ').ToList<string>();
+            List<string> days3 = Convert.ToString(forecastDate2).Split(' ').ToList<string>();
+            List<string> days4 = Convert.ToString(forecastDate3).Split(' ').ToList<string>();
+            days.InsertRange(days.Count(), new string[] { days1[0], days2[0], days3[0], days4[0] });
+           
         }
 
         private void exitLabel2_Click(object sender, EventArgs e)

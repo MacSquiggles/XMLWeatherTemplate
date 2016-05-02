@@ -116,6 +116,7 @@
             this.Controls.Add(this.nameLabel2);
             this.Name = "ForecastMenu";
             this.Size = new System.Drawing.Size(500, 600);
+            this.Load += new System.EventHandler(this.ForecastMenu_Load);
             this.ResumeLayout(false);
 
         }
