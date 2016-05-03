@@ -13,7 +13,7 @@ namespace XMLWeather
 {
     public partial class ForecastForm1 : UserControl
     {
-        string clo, clo2, max, min, rain, wnd;
+        string clo, windDir, max, min, rain, wnd;
 
         public ForecastForm1()
         {
@@ -22,13 +22,14 @@ namespace XMLWeather
 
         private void ForcastForm_Load(object sender, EventArgs e)
         {
+            int date = ForecastMenu.numFore;
 
             XmlDocument doc = new XmlDocument();
             doc.Load("WeatherData7Day.xml");
 
             //create a node variable to represent the parent element
             XmlNode parent;
-            parent = doc.DocumentElement;     
+            parent = doc.DocumentElement;
 
             //check each child of the parent element
             foreach (XmlNode child in parent.ChildNodes)
@@ -36,13 +37,14 @@ namespace XMLWeather
                 // TODO if the "city" element is found display the value of it's "name" attribute
                 if (child.Name == "forecast")
                 {
-                    if(child.Name == MainMenu.days[ForecastMenu.numFore])
+                    foreach (XmlNode grandChild in child.ChildNodes)
                     {
-                        foreach (XmlNode grandChild in child.ChildNodes)
+
+                        if (grandChild.Name == "time")
                         {
+
                             foreach (XmlNode greatGrandChild in grandChild.ChildNodes)
                             {
-
                                 if (greatGrandChild.Name == "temperature")
                                 {
                                     max = greatGrandChild.Attributes["max"].Value;
@@ -50,22 +52,38 @@ namespace XMLWeather
                                 }
                                 if (greatGrandChild.Name == "clouds")
                                 {
-                                   clo = greatGrandChild.Attributes["value"].Value;
+                                    clo = greatGrandChild.Attributes["value"].Value;
                                 }
                                 if (greatGrandChild.Name == "wind")
                                 {
-                                    clo2 = greatGrandChild.Attributes["name"].Value;
+                                    wnd = Convert.ToString(float.Parse(greatGrandChild.Attributes["mps"].Value) * 3.6);
+                                }
+                                else if (greatGrandChild.Name == "direction")
+                                {
+                                    windDir = greatGrandChild.Attributes["code"].Value;
                                 }
                             }
                         }
                     }
                 }
             }
-            Day d = new Day(clo, max, min, rain, wnd, clo2);
-            forecastMaxLabel = d.maxTemp + "°C";
-            forecastMinLabel = d.minTemp + "°C";
-            cloudsLabel = d.clouds + "°C";
-            windLabel = d.wind + "°C";
+            if (date == 1)
+            {
+                Day d = new Day(clo, max, min, rain, wnd, windDir);
+            }
+            if (date == 2)
+            {
+                Day d = new Day(clo, max, min, rain, wnd, windDir);
+            }
+            if (date == 3)
+            {
+                Day d = new Day(clo, max, min, rain, wnd, windDir);
+            }
+
+            forecastMaxLabel.Text = d.maxTemp + "°C";
+            forecastMinLabel.Text = d.minTemp + "°C";
+            cloudsLabel.Text = d.clouds;
+            windLabel.Text = d.wind + "km/h";
         }
 
         private void exitLabel2_Click(object sender, EventArgs e)
@@ -82,5 +100,7 @@ namespace XMLWeather
             f.Controls.Add(mm);
             mm.BringToFront();
         }
+
+
     }
 }

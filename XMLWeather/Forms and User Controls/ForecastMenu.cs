@@ -72,9 +72,16 @@ namespace XMLWeather
 
         private void ForecastMenu_Load(object sender, EventArgs e)
         {
-            dayOneButton.Text = MainMenu.days[1];
-            dayTwoButton.Text = MainMenu.days[2];
-            dayThreeButton.Text = MainMenu.days[3];
+            System.Globalization.DateTimeFormatInfo mfi = new
+            System.Globalization.DateTimeFormatInfo();
+
+            List<string> forecast1 = MainMenu.days[1].Split('-').ToList<string>();
+            List<string> forecast2 = MainMenu.days[2].Split('-').ToList<string>();
+            List<string> forecast3 = MainMenu.days[3].Split('-').ToList<string>();
+
+            dayOneButton.Text = mfi.GetMonthName(Convert.ToInt16(forecast1[1])) + "the"+ forecast1[2];
+            dayTwoButton.Text = mfi.GetMonthName(Convert.ToInt16(forecast2[1])) + "the" + forecast2[2];
+            dayThreeButton.Text = mfi.GetMonthName(Convert.ToInt16(forecast3[1])) + "the" + forecast3[2];
         }
     }
 }

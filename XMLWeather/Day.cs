@@ -9,12 +9,12 @@ namespace XMLWeather
 {
     class Day
     {
-        string clouds, clouds2, maxTemp, minTemp, rainPer, wind;
+        public string clouds, windDir, maxTemp, minTemp, rainPer, wind;
 
-        public Day(string _clouds, string _maxTemp, string _minTemp, string _rainPer, string _wind,  string _clouds2)
+        public Day(string _clouds, string _maxTemp, string _minTemp, string _rainPer, string _wind,  string _windDir)
         {
             clouds = _clouds;
-            clouds2 = _clouds2;
+            windDir = _windDir;
             maxTemp = _maxTemp;
             minTemp = _minTemp;
             rainPer = _rainPer;
