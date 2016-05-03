@@ -7,11 +7,13 @@ using System.Xml;
 
 namespace XMLWeather
 {
+    //An object day that uses the values clouds, windDir, maxTemp, minTemp, rainPer, wind, pressure, conditions
+    //To correctly display the weather info
     class Day
     {
-        public string clouds, windDir, maxTemp, minTemp, rainPer, wind, pressure;
+        public string clouds, windDir, maxTemp, minTemp, rainPer, wind, pressure, conditions;
 
-        public Day(string _clouds, string _maxTemp, string _minTemp, string _rainPer, string _wind,  string _windDir, string _pressure)
+        public Day(string _clouds, string _maxTemp, string _minTemp, string _rainPer, string _wind,  string _windDir, string _pressure, string _conditions)
         {
             clouds = _clouds;
             windDir = _windDir;
@@ -20,6 +22,7 @@ namespace XMLWeather
             rainPer = _rainPer;
             wind = _wind;
             pressure = _pressure;
+            conditions = _conditions;
         }
     }
 }

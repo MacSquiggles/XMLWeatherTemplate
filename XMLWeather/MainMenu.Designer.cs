@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.futureButton = new System.Windows.Forms.Button();
-            this.currentLabel = new System.Windows.Forms.Button();
+            this.currentButton = new System.Windows.Forms.Button();
             this.cityOutput = new System.Windows.Forms.Label();
-            this.exitLabel1 = new System.Windows.Forms.Label();
+            this.exitButton = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // futureButton
             // 
             this.futureButton.BackColor = System.Drawing.Color.White;
             this.futureButton.Font = new System.Drawing.Font("Pristina", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.futureButton.Location = new System.Drawing.Point(299, 508);
+            this.futureButton.Location = new System.Drawing.Point(299, 611);
             this.futureButton.Name = "futureButton";
             this.futureButton.Size = new System.Drawing.Size(165, 129);
             this.futureButton.TabIndex = 5;
@@ -46,54 +46,56 @@
             this.futureButton.UseVisualStyleBackColor = false;
             this.futureButton.Click += new System.EventHandler(this.futureButton_Click);
             // 
-            // currentLabel
+            // currentButton
             // 
-            this.currentLabel.BackColor = System.Drawing.Color.White;
-            this.currentLabel.Font = new System.Drawing.Font("Pristina", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentLabel.Location = new System.Drawing.Point(27, 508);
-            this.currentLabel.Name = "currentLabel";
-            this.currentLabel.Size = new System.Drawing.Size(165, 129);
-            this.currentLabel.TabIndex = 4;
-            this.currentLabel.Text = "Current Forcast";
-            this.currentLabel.UseVisualStyleBackColor = false;
-            this.currentLabel.Click += new System.EventHandler(this.currentLabel_Click);
+            this.currentButton.BackColor = System.Drawing.Color.White;
+            this.currentButton.Font = new System.Drawing.Font("Pristina", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentButton.Location = new System.Drawing.Point(30, 611);
+            this.currentButton.Name = "currentButton";
+            this.currentButton.Size = new System.Drawing.Size(165, 129);
+            this.currentButton.TabIndex = 4;
+            this.currentButton.Text = "Current Forcast";
+            this.currentButton.UseVisualStyleBackColor = false;
+            this.currentButton.Click += new System.EventHandler(this.currentButton_Click);
             // 
             // cityOutput
             // 
             this.cityOutput.AutoSize = true;
             this.cityOutput.BackColor = System.Drawing.Color.Transparent;
-            this.cityOutput.Font = new System.Drawing.Font("Pristina", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cityOutput.Location = new System.Drawing.Point(124, 29);
+            this.cityOutput.Font = new System.Drawing.Font("Pristina", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cityOutput.ForeColor = System.Drawing.Color.White;
+            this.cityOutput.Location = new System.Drawing.Point(49, 93);
             this.cityOutput.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cityOutput.Name = "cityOutput";
-            this.cityOutput.Size = new System.Drawing.Size(285, 52);
+            this.cityOutput.Size = new System.Drawing.Size(388, 75);
             this.cityOutput.TabIndex = 3;
             this.cityOutput.Text = "Stratford Weather";
             // 
-            // exitLabel1
+            // exitButton
             // 
-            this.exitLabel1.BackColor = System.Drawing.Color.Red;
-            this.exitLabel1.Font = new System.Drawing.Font("Pristina", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitLabel1.Location = new System.Drawing.Point(449, 0);
-            this.exitLabel1.Name = "exitLabel1";
-            this.exitLabel1.Size = new System.Drawing.Size(51, 46);
-            this.exitLabel1.TabIndex = 18;
-            this.exitLabel1.Text = "X";
-            this.exitLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.exitLabel1.Click += new System.EventHandler(this.exitLabel2_Click);
+            this.exitButton.BackColor = System.Drawing.Color.Red;
+            this.exitButton.Font = new System.Drawing.Font("Pristina", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Location = new System.Drawing.Point(449, 0);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(51, 46);
+            this.exitButton.TabIndex = 18;
+            this.exitButton.Text = "X";
+            this.exitButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::XMLWeather.Properties.Resources.sun;
+            this.BackgroundImage = global::XMLWeather.Properties.Resources.hip_star;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.exitLabel1);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.futureButton);
-            this.Controls.Add(this.currentLabel);
+            this.Controls.Add(this.currentButton);
             this.Controls.Add(this.cityOutput);
+            this.DoubleBuffered = true;
             this.Name = "MainMenu";
-            this.Size = new System.Drawing.Size(500, 683);
+            this.Size = new System.Drawing.Size(500, 807);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,8 +104,8 @@
         #endregion
 
         private System.Windows.Forms.Button futureButton;
-        private System.Windows.Forms.Button currentLabel;
+        private System.Windows.Forms.Button currentButton;
         private System.Windows.Forms.Label cityOutput;
-        private System.Windows.Forms.Label exitLabel1;
+        private System.Windows.Forms.Label exitButton;
     }
 }

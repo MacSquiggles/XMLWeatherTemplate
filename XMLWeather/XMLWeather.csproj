@@ -121,9 +121,6 @@
     <None Include="Resources\sun.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\white background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Objects\" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +128,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\temp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sun icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Optimized-cloudy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloudy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drizzle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\norain lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rainicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\snow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sunicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hip-star.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
