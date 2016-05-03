@@ -9,9 +9,9 @@ namespace XMLWeather
 {
     class Day
     {
-        public string clouds, windDir, maxTemp, minTemp, rainPer, wind;
+        public string clouds, windDir, maxTemp, minTemp, rainPer, wind, pressure;
 
-        public Day(string _clouds, string _maxTemp, string _minTemp, string _rainPer, string _wind,  string _windDir)
+        public Day(string _clouds, string _maxTemp, string _minTemp, string _rainPer, string _wind,  string _windDir, string _pressure)
         {
             clouds = _clouds;
             windDir = _windDir;
@@ -19,6 +19,7 @@ namespace XMLWeather
             minTemp = _minTemp;
             rainPer = _rainPer;
             wind = _wind;
+            pressure = _pressure;
         }
     }
 }

@@ -38,7 +38,7 @@
             // 
             this.futureButton.BackColor = System.Drawing.Color.White;
             this.futureButton.Font = new System.Drawing.Font("Pristina", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.futureButton.Location = new System.Drawing.Point(296, 442);
+            this.futureButton.Location = new System.Drawing.Point(299, 508);
             this.futureButton.Name = "futureButton";
             this.futureButton.Size = new System.Drawing.Size(165, 129);
             this.futureButton.TabIndex = 5;
@@ -50,7 +50,7 @@
             // 
             this.currentLabel.BackColor = System.Drawing.Color.White;
             this.currentLabel.Font = new System.Drawing.Font("Pristina", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentLabel.Location = new System.Drawing.Point(28, 442);
+            this.currentLabel.Location = new System.Drawing.Point(27, 508);
             this.currentLabel.Name = "currentLabel";
             this.currentLabel.Size = new System.Drawing.Size(165, 129);
             this.currentLabel.TabIndex = 4;
@@ -93,7 +93,7 @@
             this.Controls.Add(this.currentLabel);
             this.Controls.Add(this.cityOutput);
             this.Name = "MainMenu";
-            this.Size = new System.Drawing.Size(500, 600);
+            this.Size = new System.Drawing.Size(500, 683);
             this.ResumeLayout(false);
             this.PerformLayout();
 

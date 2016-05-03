@@ -13,7 +13,8 @@ namespace XMLWeather
 {
     public partial class ForecastForm1 : UserControl
     {
-        string clo, windDir, max, min, rain, wnd;
+        Day d;
+        string clo, windDir, max, min, rain, wnd, press;
 
         public ForecastForm1()
         {
@@ -22,7 +23,8 @@ namespace XMLWeather
 
         private void ForcastForm_Load(object sender, EventArgs e)
         {
-            int date = ForecastMenu.numFore;
+            System.Globalization.DateTimeFormatInfo mfi = new
+            System.Globalization.DateTimeFormatInfo();
 
             XmlDocument doc = new XmlDocument();
             doc.Load("WeatherData7Day.xml");
@@ -39,51 +41,67 @@ namespace XMLWeather
                 {
                     foreach (XmlNode grandChild in child.ChildNodes)
                     {
-
                         if (grandChild.Name == "time")
                         {
-
-                            foreach (XmlNode greatGrandChild in grandChild.ChildNodes)
+                            if (grandChild.Attributes["day"].Value == MainMenu.days[ForecastMenu.numFore])
                             {
-                                if (greatGrandChild.Name == "temperature")
+                                foreach (XmlNode greatGrandChild in grandChild.ChildNodes)
                                 {
-                                    max = greatGrandChild.Attributes["max"].Value;
-                                    min = greatGrandChild.Attributes["min"].Value;
-                                }
-                                if (greatGrandChild.Name == "clouds")
-                                {
-                                    clo = greatGrandChild.Attributes["value"].Value;
-                                }
-                                if (greatGrandChild.Name == "wind")
-                                {
-                                    wnd = Convert.ToString(float.Parse(greatGrandChild.Attributes["mps"].Value) * 3.6);
-                                }
-                                else if (greatGrandChild.Name == "direction")
-                                {
-                                    windDir = greatGrandChild.Attributes["code"].Value;
+                                    if (greatGrandChild.Name == "humidity")
+                                    {
+                                        rain = greatGrandChild.Attributes["value"].Value;
+                                    }
+                                    if (greatGrandChild.Name == "pressure")
+                                    {
+                                        press = greatGrandChild.Attributes["value"].Value;
+                                    }
+                                    if (greatGrandChild.Name == "temperature")
+                                    {
+                                        max = greatGrandChild.Attributes["max"].Value;
+                                        min = greatGrandChild.Attributes["min"].Value;
+                                    }
+                                    if (greatGrandChild.Name == "clouds")
+                                    {
+                                        clo = greatGrandChild.Attributes["value"].Value;
+                                    }
+                                    if (greatGrandChild.Name == "WindSpeed")
+                                    {
+                                        wnd = Convert.ToString(float.Parse(greatGrandChild.Attributes["mps"].Value) * 3.6);
+                                    }
+                                    if (greatGrandChild.Name == "windDirection")
+                                    {
+                                        windDir = greatGrandChild.Attributes["code"].Value;
+                                    }
                                 }
                             }
+                        }
+                        d = new Day(clo, max, min, rain, wnd, windDir, press);
+                        if (ForecastMenu.numFore == 1)
+                        {
+                            nameLabel2.Text = mfi.GetMonthName(Convert.ToInt16(ForecastMenu.forecast1[1])) + " " + ForecastMenu.forecast1[2];
+                        }
+                        if (ForecastMenu.numFore == 2)
+                        {
+                            nameLabel2.Text = mfi.GetMonthName(Convert.ToInt16(ForecastMenu.forecast2[1])) + " " + ForecastMenu.forecast2[2];
+                        }
+                        if (ForecastMenu.numFore == 3)
+                        {
+                            nameLabel2.Text = mfi.GetMonthName(Convert.ToInt16(ForecastMenu.forecast3[1])) + " " + ForecastMenu.forecast3[2];
+                        }
+                        if (ForecastMenu.numFore == 4)
+                        {
+                            nameLabel2.Text = mfi.GetMonthName(Convert.ToInt16(ForecastMenu.forecast4[1])) + " " + ForecastMenu.forecast4[2];
                         }
                     }
                 }
             }
-            if (date == 1)
-            {
-                Day d = new Day(clo, max, min, rain, wnd, windDir);
-            }
-            if (date == 2)
-            {
-                Day d = new Day(clo, max, min, rain, wnd, windDir);
-            }
-            if (date == 3)
-            {
-                Day d = new Day(clo, max, min, rain, wnd, windDir);
-            }
 
-            forecastMaxLabel.Text = d.maxTemp + "°C";
-            forecastMinLabel.Text = d.minTemp + "°C";
+            forecastMaxLabel.Text = "Max " + d.maxTemp + "°C";
+            forecastMinLabel.Text = "Min " + d.minTemp + "°C";
             cloudsLabel.Text = d.clouds;
-            windLabel.Text = d.wind + "km/h";
+            rainPerLabel.Text = d.rainPer + "%" + " humidity";
+            pressureLabel.Text = "Pressure of " + d.pressure + "hKpa";
+            windLabel.Text = d.windDir + " wind at " + d.wind + "km/h";
         }
 
         private void exitLabel2_Click(object sender, EventArgs e)
@@ -93,7 +111,7 @@ namespace XMLWeather
 
         private void mainMenuLabel2_Click(object sender, EventArgs e)
         {
-            MainMenu mm = new MainMenu();
+            ForecastMenu mm = new ForecastMenu();
             Form f = this.FindForm();
             f.Controls.Remove(this);
             mm.Location = new Point((f.Width - mm.Width) / 2, (f.Height - mm.Height) / 2);

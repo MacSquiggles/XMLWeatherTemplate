@@ -17,7 +17,8 @@ namespace XMLWeather
         public static DateTime forecastDate1 = DateTime.Now.AddDays(1);
         public static  DateTime forecastDate2 = DateTime.Now.AddDays(2);
         public static DateTime forecastDate3 = DateTime.Now.AddDays(3);
-        public static List<string> days = new List<string>(4);
+        public static DateTime forecastDate4 = DateTime.Now.AddDays(4);
+        public static List<string> days = new List<string>(5);
 
         public MainMenu()
         {
@@ -58,7 +59,8 @@ namespace XMLWeather
             List<string> days2 = Convert.ToString(forecastDate1).Split(' ').ToList<string>();
             List<string> days3 = Convert.ToString(forecastDate2).Split(' ').ToList<string>();
             List<string> days4 = Convert.ToString(forecastDate3).Split(' ').ToList<string>();
-            days.InsertRange(days.Count(), new string[] { days1[0], days2[0], days3[0], days4[0] });
+            List<string> days5 = Convert.ToString(forecastDate4).Split(' ').ToList<string>();
+            days.InsertRange(days.Count(), new string[] { days1[0], days2[0], days3[0], days4[0], days5[0] });
            
         }
 

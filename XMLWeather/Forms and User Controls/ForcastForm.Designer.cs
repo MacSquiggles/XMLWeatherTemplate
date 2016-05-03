@@ -37,13 +37,14 @@
             this.windLabel2 = new System.Windows.Forms.Label();
             this.mainMenuLabel2 = new System.Windows.Forms.Label();
             this.rainPerLabel = new System.Windows.Forms.Label();
+            this.pressureLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // forecastMinLabel
             // 
             this.forecastMinLabel.BackColor = System.Drawing.Color.Transparent;
             this.forecastMinLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forecastMinLabel.Location = new System.Drawing.Point(31, 277);
+            this.forecastMinLabel.Location = new System.Drawing.Point(31, 260);
             this.forecastMinLabel.Name = "forecastMinLabel";
             this.forecastMinLabel.Size = new System.Drawing.Size(427, 52);
             this.forecastMinLabel.TabIndex = 10;
@@ -83,7 +84,7 @@
             // 
             this.cloudsLabel.BackColor = System.Drawing.Color.Transparent;
             this.cloudsLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cloudsLabel.Location = new System.Drawing.Point(31, 362);
+            this.cloudsLabel.Location = new System.Drawing.Point(31, 328);
             this.cloudsLabel.Name = "cloudsLabel";
             this.cloudsLabel.Size = new System.Drawing.Size(427, 52);
             this.cloudsLabel.TabIndex = 14;
@@ -92,7 +93,7 @@
             // 
             this.windLabel.BackColor = System.Drawing.Color.Transparent;
             this.windLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.windLabel.Location = new System.Drawing.Point(31, 447);
+            this.windLabel.Location = new System.Drawing.Point(31, 396);
             this.windLabel.Name = "windLabel";
             this.windLabel.Size = new System.Drawing.Size(427, 52);
             this.windLabel.TabIndex = 16;
@@ -101,7 +102,7 @@
             // 
             this.windLabel2.BackColor = System.Drawing.Color.Transparent;
             this.windLabel2.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.windLabel2.Location = new System.Drawing.Point(30, 605);
+            this.windLabel2.Location = new System.Drawing.Point(36, 600);
             this.windLabel2.Name = "windLabel2";
             this.windLabel2.Size = new System.Drawing.Size(422, 52);
             this.windLabel2.TabIndex = 17;
@@ -122,16 +123,26 @@
             // 
             this.rainPerLabel.BackColor = System.Drawing.Color.Transparent;
             this.rainPerLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rainPerLabel.Location = new System.Drawing.Point(31, 532);
+            this.rainPerLabel.Location = new System.Drawing.Point(31, 464);
             this.rainPerLabel.Name = "rainPerLabel";
             this.rainPerLabel.Size = new System.Drawing.Size(427, 52);
             this.rainPerLabel.TabIndex = 19;
+            // 
+            // pressureLabel
+            // 
+            this.pressureLabel.BackColor = System.Drawing.Color.Transparent;
+            this.pressureLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pressureLabel.Location = new System.Drawing.Point(31, 532);
+            this.pressureLabel.Name = "pressureLabel";
+            this.pressureLabel.Size = new System.Drawing.Size(427, 52);
+            this.pressureLabel.TabIndex = 20;
             // 
             // ForecastForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::XMLWeather.Properties.Resources.white_background;
+            this.Controls.Add(this.pressureLabel);
             this.Controls.Add(this.rainPerLabel);
             this.Controls.Add(this.mainMenuLabel2);
             this.Controls.Add(this.windLabel2);
@@ -142,7 +153,7 @@
             this.Controls.Add(this.forecastMaxLabel);
             this.Controls.Add(this.nameLabel2);
             this.Name = "ForecastForm1";
-            this.Size = new System.Drawing.Size(500, 600);
+            this.Size = new System.Drawing.Size(500, 683);
             this.Load += new System.EventHandler(this.ForcastForm_Load);
             this.ResumeLayout(false);
 
@@ -158,5 +169,6 @@
         private System.Windows.Forms.Label windLabel2;
         private System.Windows.Forms.Label mainMenuLabel2;
         private System.Windows.Forms.Label rainPerLabel;
+        private System.Windows.Forms.Label pressureLabel;
     }
 }

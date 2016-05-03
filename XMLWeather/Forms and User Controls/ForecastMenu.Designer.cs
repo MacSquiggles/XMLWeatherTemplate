@@ -34,6 +34,7 @@
             this.dayOneButton = new System.Windows.Forms.Button();
             this.dayThreeButton = new System.Windows.Forms.Button();
             this.dayTwoButton = new System.Windows.Forms.Button();
+            this.dayFourButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainMenuLabel2
@@ -74,7 +75,7 @@
             // 
             this.dayOneButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.dayOneButton.Font = new System.Drawing.Font("Pristina", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dayOneButton.Location = new System.Drawing.Point(13, 203);
+            this.dayOneButton.Location = new System.Drawing.Point(13, 160);
             this.dayOneButton.Name = "dayOneButton";
             this.dayOneButton.Size = new System.Drawing.Size(468, 97);
             this.dayOneButton.TabIndex = 19;
@@ -85,7 +86,7 @@
             // 
             this.dayThreeButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.dayThreeButton.Font = new System.Drawing.Font("Pristina", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dayThreeButton.Location = new System.Drawing.Point(13, 467);
+            this.dayThreeButton.Location = new System.Drawing.Point(13, 440);
             this.dayThreeButton.Name = "dayThreeButton";
             this.dayThreeButton.Size = new System.Drawing.Size(468, 97);
             this.dayThreeButton.TabIndex = 20;
@@ -96,18 +97,30 @@
             // 
             this.dayTwoButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.dayTwoButton.Font = new System.Drawing.Font("Pristina", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dayTwoButton.Location = new System.Drawing.Point(13, 335);
+            this.dayTwoButton.Location = new System.Drawing.Point(13, 291);
             this.dayTwoButton.Name = "dayTwoButton";
             this.dayTwoButton.Size = new System.Drawing.Size(468, 97);
             this.dayTwoButton.TabIndex = 21;
             this.dayTwoButton.UseVisualStyleBackColor = false;
             this.dayTwoButton.Click += new System.EventHandler(this.dayTwoButton_Click);
             // 
+            // dayFourButton
+            // 
+            this.dayFourButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.dayFourButton.Font = new System.Drawing.Font("Pristina", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dayFourButton.Location = new System.Drawing.Point(13, 572);
+            this.dayFourButton.Name = "dayFourButton";
+            this.dayFourButton.Size = new System.Drawing.Size(468, 97);
+            this.dayFourButton.TabIndex = 22;
+            this.dayFourButton.UseVisualStyleBackColor = false;
+            this.dayFourButton.Click += new System.EventHandler(this.dayFourButton_Click);
+            // 
             // ForecastMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::XMLWeather.Properties.Resources.white_background;
+            this.Controls.Add(this.dayFourButton);
             this.Controls.Add(this.dayTwoButton);
             this.Controls.Add(this.dayThreeButton);
             this.Controls.Add(this.dayOneButton);
@@ -115,7 +128,7 @@
             this.Controls.Add(this.exitLabel2);
             this.Controls.Add(this.nameLabel2);
             this.Name = "ForecastMenu";
-            this.Size = new System.Drawing.Size(500, 600);
+            this.Size = new System.Drawing.Size(500, 683);
             this.Load += new System.EventHandler(this.ForecastMenu_Load);
             this.ResumeLayout(false);
 
@@ -129,5 +142,6 @@
         private System.Windows.Forms.Button dayOneButton;
         private System.Windows.Forms.Button dayThreeButton;
         private System.Windows.Forms.Button dayTwoButton;
+        private System.Windows.Forms.Button dayFourButton;
     }
 }

@@ -12,6 +12,10 @@ namespace XMLWeather
     public partial class ForecastMenu : UserControl
     {
         public static int numFore;
+        public static List<string> forecast1 = MainMenu.days[1].Split('-').ToList<string>();
+        public static List<string> forecast2 = MainMenu.days[2].Split('-').ToList<string>();
+        public static List<string> forecast3 = MainMenu.days[3].Split('-').ToList<string>();
+        public static List<string> forecast4 = MainMenu.days[4].Split('-').ToList<string>();
 
         public ForecastMenu()
         {
@@ -75,13 +79,21 @@ namespace XMLWeather
             System.Globalization.DateTimeFormatInfo mfi = new
             System.Globalization.DateTimeFormatInfo();
 
-            List<string> forecast1 = MainMenu.days[1].Split('-').ToList<string>();
-            List<string> forecast2 = MainMenu.days[2].Split('-').ToList<string>();
-            List<string> forecast3 = MainMenu.days[3].Split('-').ToList<string>();
+            dayOneButton.Text = mfi.GetMonthName(Convert.ToInt16(forecast1[1])) + " "+ forecast1[2];
+            dayTwoButton.Text = mfi.GetMonthName(Convert.ToInt16(forecast2[1])) + " " + forecast2[2];
+            dayThreeButton.Text = mfi.GetMonthName(Convert.ToInt16(forecast3[1])) + " " + forecast3[2];
+            dayFourButton.Text = mfi.GetMonthName(Convert.ToInt16(forecast4[1])) + " " + forecast4[2];
+        }
 
-            dayOneButton.Text = mfi.GetMonthName(Convert.ToInt16(forecast1[1])) + "the"+ forecast1[2];
-            dayTwoButton.Text = mfi.GetMonthName(Convert.ToInt16(forecast2[1])) + "the" + forecast2[2];
-            dayThreeButton.Text = mfi.GetMonthName(Convert.ToInt16(forecast3[1])) + "the" + forecast3[2];
+        private void dayFourButton_Click(object sender, EventArgs e)
+        {
+            numFore = 4;
+            ForecastForm1 ff1 = new ForecastForm1();
+            Form f = this.FindForm();
+            ff1.Controls.Remove(this);
+            ff1.Location = new Point((f.Width - ff1.Width) / 2, (f.Height - ff1.Height) / 2);
+            f.Controls.Add(ff1);
+            ff1.BringToFront();
         }
     }
 }

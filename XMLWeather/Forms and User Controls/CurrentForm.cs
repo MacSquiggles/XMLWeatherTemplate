@@ -13,6 +13,7 @@ namespace XMLWeather
 {
     public partial class CurrentForm : UserControl
     {
+        List<string> currentDate = MainMenu.days[0].Split('-').ToList<string>();
 
         public CurrentForm()
         {
@@ -21,7 +22,10 @@ namespace XMLWeather
 
         private void CurrentForm_Load(object sender, EventArgs e)
         {
-            nameLabel.Text = MainMenu.days[0];
+            System.Globalization.DateTimeFormatInfo mfi = new
+            System.Globalization.DateTimeFormatInfo();
+
+            nameLabel.Text = "It is " + mfi.GetMonthName(Convert.ToInt16(currentDate[1])) + " " + currentDate[2];
 
             XmlDocument doc = new XmlDocument();
             doc.Load("WeatherData.xml");
@@ -35,7 +39,7 @@ namespace XMLWeather
                 // TODO if the "city" element is found display the value of it's "name" attribute
                 if (child.Name == "city")
                 {
-                    nameLabel.Text = "Current" + child.Attributes["name"].Value + " Weather";
+                    cityLabel.Text = child.Attributes["name"].Value + " Weather";
                 }
                 if(child.Name == "temperature")
                 {
